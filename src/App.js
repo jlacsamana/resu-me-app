@@ -1,32 +1,68 @@
-import logo from './res/logo.svg';
 import './App.css';
+import React, { useReducer, useState } from "react";
+import './QuickApplier.js';
+import { QuickApplier } from './QuickApplier.js';
+import { HomePage } from './HomePage.js';
+import { ResumeManager } from './ResumeManager.js';
+import { InterviewCalendar } from './InterviewCalender.js';
+
+const defaultPage = (
+  HomePage);
+const PageContext = React.createContext(defaultPage);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  const [currentPage, setPage] = useState(defaultPage);
 
-          Learn React
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Quick Apply!</a>
-      </header>
-    </div>
-  );
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "QuickApplier": {
+        setPage(QuickApplier);
+        break;
+      }
+      case "InterviewCalender": {
+        setPage(InterviewCalendar);
+        break;
+      }
+      case "ResumeManager": {
+        setPage(ResumeManager);
+        break;
+      }
+      case "HomePage": {
+        setPage(HomePage);
+        break;
+      }
+      default: {
+        throw Error('Unknown action: ' + action.type);
+      }
+    }
+  }
+
+  const [_, dispatch] = useReducer(reducer, currentPage);
+
+  const values = {
+    switchPage: dispatch
+  }
+
+
+  return (
+    <PageContext.Provider value={values}>
+      <button onClick={() => {
+        dispatch({ type: 'QuickApplier' })
+      }}>QuickApplier</button>
+      <button onClick={() => {
+        dispatch({ type: 'InterviewCalender' })
+      }}>InterviewCalendar</button>
+      <button onClick={() => {
+        dispatch({ type: 'ResumeManager' })
+      }}>Resume Manager</button>
+      <button onClick={() => {
+        dispatch({ type: 'HomePage' })
+      }}>Home</button>
+
+      {currentPage}
+    </PageContext.Provider>
+
+  )
 }
 
 export default App;
