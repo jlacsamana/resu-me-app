@@ -2,9 +2,12 @@ import './App.css';
 import React, { useReducer, useState } from "react";
 import './QuickApplier.js';
 import { QuickApplier } from './QuickApplier.js';
+import { HomePage } from './HomePage.js';
+import { ResumeManager } from './ResumeManager.js';
+import { InterviewCalendar } from './InterviewCalender.js';
 
-const defaultPage = (<div>
-</div>);
+const defaultPage = (
+  HomePage);
 const PageContext = React.createContext(defaultPage);
 
 function App() {
@@ -13,7 +16,19 @@ function App() {
   const reducer = (state, action) => {
     switch (action.type) {
       case "QuickApplier": {
-        setPage(<><p>PORNHUB</p></>);
+        setPage(QuickApplier);
+        break;
+      }
+      case "InterviewCalender": {
+        setPage(InterviewCalendar);
+        break;
+      }
+      case "ResumeManager": {
+        setPage(ResumeManager);
+        break;
+      }
+      case "HomePage": {
+        setPage(HomePage);
         break;
       }
       default: {
@@ -31,24 +46,22 @@ function App() {
 
   return (
     <PageContext.Provider value={values}>
-      <div>
-        <button onClick={() => {
-          dispatch({ type: 'QuickApplier' })
-        }}>QuickApplier</button>
+      <button onClick={() => {
+        dispatch({ type: 'QuickApplier' })
+      }}>QuickApplier</button>
+      <button onClick={() => {
+        dispatch({ type: 'InterviewCalender' })
+      }}>InterviewCalendar</button>
+      <button onClick={() => {
+        dispatch({ type: 'ResumeManager' })
+      }}>Resume Manager</button>
+      <button onClick={() => {
+        dispatch({ type: 'HomePage' })
+      }}>Home</button>
 
-        <button onClick={() => {
-
-        }}>InterviewCalendar</button>
-        <button onClick={() => {
-
-        }}>Resume Manager</button>
-        <button onClick={() => {
-
-        }}>Home</button>
-
-
-      </div>
+      {currentPage}
     </PageContext.Provider>
+
   )
 }
 
