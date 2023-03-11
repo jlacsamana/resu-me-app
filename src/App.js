@@ -1,32 +1,36 @@
-import logo from './res/logo.svg';
 import './App.css';
+import React, { useReducer, useState } from "react";
+
+const defaultPage = (<div><p>send nudes</p></div>);
+const PageContext = React.createContext(defaultPage);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  const [currentPage, setPage] = useState(defaultPage);
 
-          Learn React
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Quick Apply!</a>
-      </header>
-    </div>
-  );
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "": {
+        setPage(<></>);
+        break;
+      }
+      default: {
+        throw Error('Unknown action: ' + action.type);
+      }
+    }
+  }
+
+  const [_, dispatch] = useReducer(reducer, currentPage);
+
+	const values = {
+		switchPage: dispatch
+	}
+
+
+	return (
+		<PageContext.Provider value={values}>
+			{currentPage}
+		</PageContext.Provider>
+	)
 }
 
 export default App;
