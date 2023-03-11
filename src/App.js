@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './res/logo.svg';
 import './App.css';
 
 function App() {
@@ -15,8 +15,15 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+
           Learn React
         </a>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Quick Apply!</a>
       </header>
     </div>
   );
