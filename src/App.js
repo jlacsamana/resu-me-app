@@ -5,6 +5,7 @@ import { QuickApplier } from './QuickApplier.js';
 import { HomePage } from './HomePage.js';
 import { ResumeManager } from './ResumeManager.js';
 import { InterviewCalendar } from './InterviewCalender.js';
+import {User} from './User.js';
 
 const defaultPage = (
   HomePage);
@@ -29,6 +30,10 @@ function App() {
       }
       case "HomePage": {
         setPage(HomePage);
+        break;
+      }
+      case "User" : {
+        setPage(User);
         break;
       }
       default: {
