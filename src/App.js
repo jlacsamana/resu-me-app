@@ -1,7 +1,10 @@
 import './App.css';
 import React, { useReducer, useState } from "react";
+import './QuickApplier.js';
+import { QuickApplier } from './QuickApplier.js';
 
-const defaultPage = (<div><p>send nudes</p></div>);
+const defaultPage = (<div>
+</div>);
 const PageContext = React.createContext(defaultPage);
 
 function App() {
@@ -9,8 +12,8 @@ function App() {
 
   const reducer = (state, action) => {
     switch (action.type) {
-      case "": {
-        setPage(<></>);
+      case "QuickApplier": {
+        setPage(<><p>PORNHUB</p></>);
         break;
       }
       default: {
@@ -21,16 +24,32 @@ function App() {
 
   const [_, dispatch] = useReducer(reducer, currentPage);
 
-	const values = {
-		switchPage: dispatch
-	}
+  const values = {
+    switchPage: dispatch
+  }
 
 
-	return (
-		<PageContext.Provider value={values}>
-			{currentPage}
-		</PageContext.Provider>
-	)
+  return (
+    <PageContext.Provider value={values}>
+      <div>
+        <button onClick={() => {
+          dispatch({ type: 'QuickApplier' })
+        }}>QuickApplier</button>
+
+        <button onClick={() => {
+
+        }}>InterviewCalendar</button>
+        <button onClick={() => {
+
+        }}>Resume Manager</button>
+        <button onClick={() => {
+
+        }}>Home</button>
+
+
+      </div>
+    </PageContext.Provider>
+  )
 }
 
 export default App;
