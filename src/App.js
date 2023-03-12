@@ -7,14 +7,13 @@ import { ResumeManager } from './ResumeManager.js';
 import { InterviewCalendar } from './InterviewCalender.js';
 import {User} from './User.js';
 
-const defaultPage = (
-  HomePage);
-const PageContext = React.createContext(defaultPage);
+const defaultPage = (HomePage);
+export const PageContext = React.createContext(defaultPage);
 
 function App() {
   const [currentPage, setPage] = useState(defaultPage);
 
-  const reducer = (state, action) => {
+  const reducer = (_, action) => {
     switch (action.type) {
       case "QuickApplier": {
         setPage(QuickApplier);
@@ -42,7 +41,7 @@ function App() {
     }
   }
 
-  const [_, dispatch] = useReducer(reducer, currentPage);
+  const [, dispatch] = useReducer(reducer, currentPage);
 
   const values = {
     switchPage: dispatch
@@ -66,10 +65,8 @@ function App() {
       <button onClick={() => {
         dispatch({ type: 'HomePage' })
       }}>Home</button>
-
       {currentPage}
     </PageContext.Provider>
-
   )
 }
 
