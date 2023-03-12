@@ -32,7 +32,8 @@ const ResumePopup= (props) => {
     }
     
     const CardStyle = {
-        backgroundColor: 'cyan',
+
+        background:'transparent',
         width:200,
         height:230,
         margin:10,
@@ -69,7 +70,7 @@ const ResumePopup= (props) => {
                 <div style={Browser}>
                     {
                         Resumes.filter(resume=>resume.companyName.toLowerCase().includes(query)).map(resume => (
-                            <button style={CardStyle} key={resume.id} onClick={() => props.setTrigger(false)}>
+                            <button style={CardStyle} key={resume.id} onClick={() => {props.setTrigger(false)}}>
                                 <img src={resume.image}></img>
                                 <div style={Container}>
                                     <h4><b>{resume.companyName}</b></h4>

@@ -7,10 +7,12 @@ import React, { useState } from "react";
 import { default_employer, employerList } from '../res/testing';
 import ResumePopup from './ResumePopup'
 
+
 export function QuickApplier() {
     const [currentEmployerProfile, updateView] = useState(0);
     const [count, updateCounter] = useState(0);
     const [buttonPopup, setButtonPopup] = useState(false);
+
 
     //get an employer profile from the queue
     //replenish queue if numbers are sufficiently low
@@ -62,11 +64,8 @@ export function QuickApplier() {
                         <button class="buttonRound"><img src={heart} onClick={() => {
                             // before going onto next employer, create popup view, prompting resume select, and submission
                             setButtonPopup(true);
-                            
 
-
-
-                            // next employer after popup is dismissed
+                            //TODO: next employer after popup is dismissed
                             nextEmployerView();
                             incrementCounter();
                         }}></img></button>
