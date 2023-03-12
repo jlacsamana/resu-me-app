@@ -1,4 +1,5 @@
 import PageWrapper from '../components/PageWrapper';
+import '../User.css';
 
 export function User() {
   const UserOuterStyle = {
@@ -7,7 +8,7 @@ export function User() {
     alignItems: "center",
   }
   const UserInnerStyle = {
-    justifyContent : "center"
+    justifyContent: "center"
   }
   function editProfile() {
     if (document.getElementById("username").disabled) {
@@ -26,7 +27,7 @@ export function User() {
       document.getElementById("button").value = "Edit profile";
       saveInputs();
     }
-    
+
   }
 
   function saveInputs() {
@@ -42,51 +43,27 @@ export function User() {
   }
   return (
     <PageWrapper>
-      <body class = "user">
-        <div style = {UserOuterStyle}>
-        <h2>User Profile</h2>
-          <div style = {UserInnerStyle}>
-            <div class = "text">
-            Name (*):
-            Email:
-            Age (*):
-            Gender (*):
-            Description:
+      <body>
+        <div class="User">
+          <h2>User Profile</h2>
+          <div>
+            <div class="container">
+
+              <div class="text"><p class="accntItem">Name (*):</p> <input type="text" id="username" disabled="true" /></div>
+              <div class="text"><p class="accntItem">Email:</p> <input type="text" id="email" disabled="true" /></div>
+              <div class="text"><p class="accntItem">Age (*):</p> <input type="text" id="age" disabled="true" /> </div>
+              <div class="text"><p class="accntItem">Gender (*):</p> <input type="text" id="gender" disabled="true" /></div>
+              <div class="text"><p class="accntItem">Description:</p> <textarea type="text" id="desc" rows="5" cols="33" readOnly="true" /></div>
+              <input onClick={editProfile} id="button" type="button" value="Edit profile" /><br></br>
             </div>
-            <div class = "boxes">
-            <input type = "text" id = "username" disabled = "true" /><br></br>
-            <input type = "text" id = "email" disabled = "true"/><br></br>
-            <input type = "text" id = "age" disabled = "true"/><br></br>
-            <button class="btn" id="btn"></button>
-            <textarea type = "text" id = "desc" rows = "5" cols = "33" readOnly = "true"/><br></br>
-            </div>
-            Name (*): <input type = "text" id = "username" disabled = "true" /><br></br>
-            Email: <input type = "text" id = "email" disabled = "true"/><br></br>
-            Age (*): <input type = "text" id = "age" disabled = "true"/><br></br>
-            Gender (*): <button class="btn" id="btn">
-            Select
-            <i class="bx bx-chevron-down" id="arrow"></i>
-            </button>
-            <div class="dropdown" id="dropdown">
-            <a href="#male">
-              Male
-            </a>
-            <a href="#female">
-              Female
-            </a>
-            <a href="#other">
-              Other
-            </a>
+
+
           </div>
-          <br></br>
-        Description:<br></br> <textarea type = "text" id = "desc" rows = "5" cols = "33" readOnly = "true"/><br></br>
-        <input onClick ={editProfile} id = "button" type = "button" value = "Edit profile"/><br></br>
         </div>
-          </div>
-        
+
       </body>
-    </PageWrapper>
+    </PageWrapper >
   );
 
-  
+
 }

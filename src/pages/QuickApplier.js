@@ -16,7 +16,13 @@ export function QuickApplier() {
 
     //stub, not working yet, change to make database calls
     function getNextEmployer() {
-        return employerList[count];
+        if (count < employerList.length) {
+            return employerList[count];
+        } else {
+            alert("No more possible matches!");
+            return employerList[employerList.length - 1];
+        }
+
 
     }
 
