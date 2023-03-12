@@ -1,11 +1,10 @@
 import './App.css';
 import React, { useReducer, useState } from "react";
-import './QuickApplier.js';
-import { QuickApplier } from './QuickApplier.js';
-import { HomePage } from './HomePage.js';
-import { ResumeManager } from './ResumeManager.js';
-import { InterviewCalendar } from './InterviewCalender.js';
-import {User} from './User.js';
+import { QuickApplier } from './pages/QuickApplier.js';
+import { HomePage } from './pages/HomePage.js';
+import { ResumeManager } from './pages/ResumeManager.js';
+import { InterviewCalendar } from './pages/InterviewCalender.js';
+import {User} from './user.js';
 
 const defaultPage = (HomePage);
 export const PageContext = React.createContext(defaultPage);
@@ -50,21 +49,6 @@ function App() {
 
   return (
     <PageContext.Provider value={values}>
-      <button onClick={() => {
-        dispatch({ type: 'QuickApplier' })
-      }}>QuickApplier</button>
-      <button onClick={() => {
-        dispatch({ type: 'InterviewCalender' })
-      }}>InterviewCalendar</button>
-      <button onClick={() => {
-        dispatch({ type: 'ResumeManager' })
-      }}>Resume Manager</button>
-      <button onClick={() => {
-        dispatch({ type: 'User' })
-      }}>User</button>
-      <button onClick={() => {
-        dispatch({ type: 'HomePage' })
-      }}>Home</button>
       {currentPage}
     </PageContext.Provider>
   )
