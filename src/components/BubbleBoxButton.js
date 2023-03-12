@@ -1,15 +1,14 @@
 import React from 'react';
 import { PageContext } from '../App';
 import { NavBarWidth } from './NavigationBar';
+import { Header3FontSize, SubheaderTextStyle, NormalTextFontSize, CaseStatus } from './TextFormat';
 
 const BubbleMarginSides = 20;
 const BubbleMarginTop = 22;
 const StatusColourWidth = 17;
-const JobNameFontSize = 32;
-const CompanyNameFontSize = 20;
-const NormalTextFontSize = 16;
 
-const BubbleBoxButton = ({destination, text, caseStatus}) => {
+
+const BubbleBoxButton = ({destination, headerText, subheaderText, text, lastActivity, caseStatus, pfpbackgroundColour}) => {
 	const BubbleBoxBodyStyle = {
         position: 'relative',
 
@@ -35,7 +34,7 @@ const BubbleBoxButton = ({destination, text, caseStatus}) => {
 
     const StatusColourStyle = {
         position: 'absolute',
-        backgroundColor: '#88FF88',
+        backgroundColor: caseStatus,
         width: StatusColourWidth,
         height: '100%',
         left: 0,
@@ -45,7 +44,7 @@ const BubbleBoxButton = ({destination, text, caseStatus}) => {
     }
 
     const PictureIconStyle = {
-        backgroundColor: '#BADA55',
+        backgroundColor: caseStatus === CaseStatus["Info"] ? CaseStatus["Info"] : pfpbackgroundColour,
         width: `100px`,
         height: `100px`,
         marginTop: 7.5,
@@ -53,25 +52,24 @@ const BubbleBoxButton = ({destination, text, caseStatus}) => {
         borderRadius: '50%',
     }
 
-    const JobNameHeaderStyle = {
+    const Header3TextStyle = {
         textAlign: 'left',
         marginLeft: 20,
         marginTop: 7.5,
-        fontSize: JobNameFontSize,
+        fontSize: Header3FontSize,
         fontWeight: 'bold',
     }
-
-    const CompanyNameHeaderStyle = {
-        textAlign: 'left',
-        fontSize: CompanyNameFontSize,
-        fontWeight: 'normal',
-    }
-
-    const StatusHeaderStyle = {
+    
+    const NormalTextStyle = {
         textAlign: 'left',
         marginTop: 22,
         fontSize: NormalTextFontSize,
-        fontWeight: 'normal',
+        fontWeight: 'medium',
+    }
+    const LastActivityStyle = {
+        textAlign: 'left',
+        marginLeft: 20,
+        marginTop: 8,
     }
 
 	const {switchPage} = React.useContext(PageContext);
@@ -83,12 +81,12 @@ const BubbleBoxButton = ({destination, text, caseStatus}) => {
 		>
             <div style={StatusColourStyle}></div>
             <div style={PictureIconStyle}></div>
-            <div style={JobNameHeaderStyle}>
-                    {text}
-                    <div style={CompanyNameHeaderStyle}>
-                        Apply now!
-                        <div style={StatusHeaderStyle}>
-                            Status here.
+            <div style={Header3TextStyle}>
+                    {headerText}
+                    <div style={SubheaderTextStyle}>
+                        {subheaderText}
+                        <div style={NormalTextStyle}>
+                            {text}
                         </div>
                     </div>
             </div>
