@@ -1,11 +1,11 @@
 import PageWrapper from '../components/PageWrapper';
 import BubbleBoxButton from '../components/BubbleBoxButton';
-import {Header2TextStyle, MarginVerbose, Line, CaseStatus} from '../components/TextFormat';
+import {Header2Text, MarginVerbose, Line, CaseStatus} from '../components/TextFormat';
 
 export function ResumeManager() {
     return (
         <PageWrapper>
-            <Header2TextStyle 
+            <Header2Text 
             textAlight='bottom' 
             marginTop={60} 
             marginLeft={30} 
@@ -19,7 +19,8 @@ export function ResumeManager() {
                     subheaderText='Apply now!' 
                     text='Go out and touch grass!' 
                     caseStatus={CaseStatus["Info"]}
-                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}/>
+                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}
+                    destination='ResumeEntry'/>
                 </div>
                 <div>
                     <BubbleBoxButton 
@@ -28,7 +29,8 @@ export function ResumeManager() {
                     lastActivity='6h'
                     text='Awaiting response. Resume and Cover Letter sent.' 
                     caseStatus={CaseStatus["Awaiting"]}
-                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}/>
+                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}
+                    destination='ResumeEntry'/>
                 </div>
                 <div>
                     <BubbleBoxButton 
@@ -37,7 +39,8 @@ export function ResumeManager() {
                     lastActivity='8h'
                     text='Invited to interview.' 
                     caseStatus={CaseStatus["Interview"]}
-                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}/>
+                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}
+                    destination='ResumeEntry'/>
                 </div>
                 <div>
                     <BubbleBoxButton
@@ -46,7 +49,8 @@ export function ResumeManager() {
                     lastActivity='2d'
                     text='Rejected :(' 
                     caseStatus={CaseStatus["Rejected"]}
-                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}/>
+                    pfpbackgroundColour={`#${Math.floor(Math.random()*0xFFFFFF).toString(16)}`}
+                    destination='ResumeEntry'/>
                 </div>
             </div>
         </PageWrapper>

@@ -3,12 +3,12 @@ import { PageContext } from '../App';
 import { NavBarWidth } from './NavigationBar';
 import { Header3FontSize, SubheaderTextStyle, NormalTextFontSize, CaseStatus } from './TextFormat';
 
-const BubbleMarginSides = 20;
-const BubbleMarginTop = 22;
-const StatusColourWidth = 17;
+export const BubbleMarginSides = 20;
+export const BubbleMarginTop = 22;
+export const StatusColourWidth = 17;
 
 
-const BubbleBoxButton = ({destination, headerText, subheaderText, text, lastActivity, caseStatus, pfpbackgroundColour}) => {
+const BubbleBoxButton = ({destination, headerText, subheaderText, text, lastActivity, caseStatus, pfpbackgroundColour, width, height}) => {
 	const BubbleBoxBodyStyle = {
         position: 'relative',
 
@@ -24,8 +24,8 @@ const BubbleBoxButton = ({destination, headerText, subheaderText, text, lastActi
 		fontSize: 24,
 		textAlign: 'left',
 
-        width: `calc(100vw - ${2*BubbleMarginSides + NavBarWidth}px)`,
-        height: '115px',
+        width: width ?? `calc(100vw - ${2*BubbleMarginSides + NavBarWidth}px)`,
+        height: height ?? '115px',
 
         marginTop: BubbleMarginTop,
         marginLeft: BubbleMarginSides,

@@ -12,10 +12,15 @@ export const CaseStatus = {
     Info:       '#B1B1B1',
 }
 
-export const Header2TextStyle = ({marginTop, marginBottom, marginLeft, marginRight, text, textAlign}
+export const Header2Text = ({marginTop, marginBottom, marginLeft, marginRight, text, textAlign, position, top, bottom, left, right}
     ) => (
         <div
         style={{
+            position: position,
+            top: top,
+            bottom: bottom,
+            left: left,
+            right: right,
             marginTop: marginTop,
             marginBottom: marginBottom,
             marginLeft: marginLeft,
@@ -23,6 +28,48 @@ export const Header2TextStyle = ({marginTop, marginBottom, marginLeft, marginRig
             textAlign: textAlign,
             fontSize: Header2FontSize,
             fontWeight: 'bold',
+        }}>
+            {text}
+        </div>
+);
+
+export const Header3Text = ({marginTop, marginBottom, marginLeft, marginRight, text, textAlign, position, top, bottom, left, right}
+    ) => (
+        <div
+        style={{
+            position: position,
+            top: top,
+            bottom: bottom,
+            left: left,
+            right: right,
+            marginTop: marginTop,
+            marginBottom: marginBottom,
+            marginLeft: marginLeft,
+            marginRight: marginRight,
+            textAlign: textAlign,
+            fontSize: Header3FontSize,
+            fontWeight: 'bold',
+        }}>
+            {text}
+        </div>
+);
+
+export const SubheaderText = ({marginTop, marginBottom, marginLeft, marginRight, text, textAlign, position, top, bottom, left, right}
+    ) => (
+        <div
+        style={{
+            position: position,
+            top: top,
+            bottom: bottom,
+            left: left,
+            right: right,
+            marginTop: marginTop,
+            marginBottom: marginBottom,
+            marginLeft: marginLeft,
+            marginRight: marginRight,
+            textAlign: textAlign,
+            fontSize: SubheaderFontSize,
+            fontWeight: 550,
         }}>
             {text}
         </div>
