@@ -15,23 +15,23 @@ function App() {
   const reducer = (_, action) => {
     switch (action.type) {
       case "QuickApplier": {
-        setPage(QuickApplier);
+        setPage(<QuickApplier />);
         break;
       }
       case "InterviewCalender": {
-        setPage(InterviewCalendar);
+        setPage(<InterviewCalendar />);
         break;
       }
       case "ResumeManager": {
-        setPage(ResumeManager);
+        setPage(<ResumeManager />);
         break;
       }
       case "HomePage": {
-        setPage(HomePage);
+        setPage(<HomePage />);
         break;
       }
-      case "User" : {
-        setPage(User);
+      case "User": {
+        setPage(<User />);
         break;
       }
       default: {
