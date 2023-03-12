@@ -1,0 +1,69 @@
+.item1 {
+    width: 20%;
+    height: 100%;
+}
+
+.item2 {
+    width: 70%;
+    background-color: white;
+    height: 100%;
+}
+
+.item3 {
+    width: 30%;
+    margin-left: 20px;
+    height: 100%;
+}
+
+.grid-container {
+    display: flex;
+    background-color: #b1d0ff;
+}
+
+.grid-container>div {
+    text-align: center;
+    padding: 0px 0;
+    font-size: 30px;
+    height: 100vh;
+}
+
+.employerImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    background-color: white;
+}
+
+.jobText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.jobDesc {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+.buttonRound {
+
+
+    border: none;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 35px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.absButtonView {
+    position: absolute;
+    bottom: 0px;
+    left: 550px;
+
+}
