@@ -10,3 +10,7 @@ function makeStruct(paramStr) {
     }
     return constructor;
 }
+
+
+//data structure representing a job posting
+const jobPost = new makeStruct("employerName, position, description, jobReqs, profilePicUrl");
