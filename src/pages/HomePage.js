@@ -1,9 +1,10 @@
 import PageWrapper from '../components/PageWrapper';
 
 export function HomePage() {
+    
     return (
         <PageWrapper>
-            <p>:skull_emoji: x 30</p>
+                <p>This is where the home screen would be like if we were able to finish it.</p>    
         </PageWrapper>
     );
 }
