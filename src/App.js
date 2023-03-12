@@ -61,6 +61,9 @@ function App() {
         dispatch({ type: 'ResumeManager' })
       }}>Resume Manager</button>
       <button onClick={() => {
+        dispatch({ type: 'User' })
+      }}>User</button>
+      <button onClick={() => {
         dispatch({ type: 'HomePage' })
       }}>Home</button>
 
