@@ -1,10 +1,44 @@
+import NavigationButton from '../components/NavigationButton';
 import PageWrapper from '../components/PageWrapper';
 
 export function HomePage() {
+    const HomePageStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: '20vh',
+    }
+
+    const DescriptionStyle = {
+        background: 'lightgray',
+        height: 150,
+        width: 400,
+        border: 'solid',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 'auto',
+    }
+
+    const ButtonStyle  = {
+        backgroundColor: 'rgb(107, 227, 235)',
+        display: 'flex',
+        alignItems: 'center',
+        paddingRight: 32,
+        marginTop: 25,
+        borderRadius: 10,
+        height: 60,
+    }
     
     return (
         <PageWrapper>
-                <p>This is where the home screen would be like if we were able to finish it.</p>    
+            <div style={HomePageStyle}>
+                <h1>ResuMe</h1>
+                <h3 style={DescriptionStyle}>Scope is a cunt.</h3>
+                <div style={ButtonStyle}>
+                    <NavigationButton text="Look for posting" destination='QuickApplier'/>
+                </div>
+            </div>
         </PageWrapper>
     );
 }
