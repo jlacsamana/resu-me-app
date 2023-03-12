@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "Grind.r"
+    },
+    {
+        "id":2,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "LosPollos"
+    }, 
+    {
+        "id":3,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "Amogus"
+    },
+    {
+        "id":4,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "LosPollos"
+    },
+    {
+        "id":5,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "LosPollos"
+    },
+    {
+        "id":6,
+        "img":"https://i.imgur.com/dzv5wMJ.jpeg",
+        "companyName": "LosPollos"
+    }
+]
