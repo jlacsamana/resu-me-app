@@ -3,7 +3,7 @@ import React, { useReducer, useState } from "react";
 import { QuickApplier } from './pages/QuickApplier.js';
 import { HomePage } from './pages/HomePage.js';
 import { ResumeManager } from './pages/ResumeManager.js';
-import { InterviewCalendar } from './pages/InterviewCalender.js';
+import { InterviewCalendar } from './pages/InterviewCalendar.js';
 import {User} from './pages/User.js';
 
 const defaultPage = (HomePage);
@@ -18,7 +18,7 @@ function App() {
         setPage(<QuickApplier />);
         break;
       }
-      case "InterviewCalender": {
+      case "InterviewCalendar": {
         setPage(<InterviewCalendar />);
         break;
       }

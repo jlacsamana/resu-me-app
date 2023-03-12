@@ -23,7 +23,7 @@ const NavigationBar = () => {
 		<div style={NavBarTheme}>
 			<NavigationButton text="Home" destination='HomePage'/>
 			<NavigationButton text="Matchmaker" destination='QuickApplier'/>
-			<NavigationButton text="Calendar" destination='InterviewCalender'/>
+			<NavigationButton text="Calendar" destination='InterviewCalendar'/>
 			<NavigationButton text="Resumes" destination='ResumeManager'/>
 			<NavigationButton text="Profile" destination='User'/>
 		</div>
