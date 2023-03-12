@@ -1,17 +1,9 @@
-import './QuickApplier.css';
+import PageWrapper from '../components/PageWrapper';
 
 export function QuickApplier() {
-    //get an employer profile from the queue
-
-
-
-
-
     return (
-        <div class="grid-container">
-            <div class="item1"></div>
-            <div class="item2"></div>
-            <div class="item3"></div>
-        </div>
+        <PageWrapper>
+            <p>Send nudes</p>
+        </PageWrapper>
     );
 }

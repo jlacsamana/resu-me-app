@@ -1,27 +1,33 @@
 .item1 {
-    grid-area: sideMenu;
+    width: 20%;
 }
 
 .item2 {
-    grid-area: matchUI;
+    width: 55%;
+    background-color: white;
+
 }
 
 .item3 {
-    grid-area: description;
+    width: 25%;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-areas:
-        'sideMenu matchUI matchUI matchUI matchUI description description';
-    gap: 1px;
-    background-color: #ffffff;
+    display: flex;
+    background-color: #b1d0ff;
 }
 
 .grid-container>div {
-    background-color: rgba(182, 223, 255, 0.8);
     text-align: center;
-    padding: 20px 0;
+    padding: 0px 0;
     font-size: 30px;
     height: 100vh;
+}
+
+.employerImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    background-color: white;
 }
