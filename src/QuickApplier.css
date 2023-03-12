@@ -1,0 +1,27 @@
+.item1 {
+    grid-area: sideMenu;
+}
+
+.item2 {
+    grid-area: matchUI;
+}
+
+.item3 {
+    grid-area: description;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'sideMenu matchUI matchUI matchUI matchUI description description';
+    gap: 1px;
+    background-color: #ffffff;
+}
+
+.grid-container>div {
+    background-color: rgba(182, 223, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    height: 100vh;
+}
