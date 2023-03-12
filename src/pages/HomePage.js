@@ -34,7 +34,7 @@ export function HomePage() {
         <PageWrapper>
             <div style={HomePageStyle}>
                 <h1>ResuMe</h1>
-                <h3 style={DescriptionStyle}>Scope is a cunt.</h3>
+                <h3 style={DescriptionStyle}>Imagine using SCOPE</h3>
                 <div style={ButtonStyle}>
                     <NavigationButton text="Look for posting" destination='QuickApplier'/>
                 </div>
