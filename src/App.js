@@ -1,19 +1,18 @@
 import './App.css';
 import React, { useReducer, useState } from "react";
-import './QuickApplier.js';
-import { QuickApplier } from './QuickApplier.js';
-import { HomePage } from './HomePage.js';
-import { ResumeManager } from './ResumeManager.js';
-import { InterviewCalendar } from './InterviewCalender.js';
+import './pages/QuickApplier.js';
+import { QuickApplier } from './pages/QuickApplier.js';
+import { HomePage } from './pages/HomePage.js';
+import { ResumeManager } from './pages/ResumeManager.js';
+import { InterviewCalendar } from './pages/InterviewCalender.js';
 
-const defaultPage = (
-  HomePage);
-const PageContext = React.createContext(defaultPage);
+const defaultPage = (HomePage);
+export const PageContext = React.createContext(defaultPage);
 
 function App() {
   const [currentPage, setPage] = useState(defaultPage);
 
-  const reducer = (state, action) => {
+  const reducer = (_, action) => {
     switch (action.type) {
       case "QuickApplier": {
         setPage(QuickApplier);
@@ -37,7 +36,7 @@ function App() {
     }
   }
 
-  const [_, dispatch] = useReducer(reducer, currentPage);
+  const [, dispatch] = useReducer(reducer, currentPage);
 
   const values = {
     switchPage: dispatch
@@ -46,22 +45,8 @@ function App() {
 
   return (
     <PageContext.Provider value={values}>
-      <button onClick={() => {
-        dispatch({ type: 'QuickApplier' })
-      }}>QuickApplier</button>
-      <button onClick={() => {
-        dispatch({ type: 'InterviewCalender' })
-      }}>InterviewCalendar</button>
-      <button onClick={() => {
-        dispatch({ type: 'ResumeManager' })
-      }}>Resume Manager</button>
-      <button onClick={() => {
-        dispatch({ type: 'HomePage' })
-      }}>Home</button>
-
       {currentPage}
     </PageContext.Provider>
-
   )
 }
 
