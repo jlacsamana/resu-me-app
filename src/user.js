@@ -2,7 +2,6 @@ import './App.css';
 
 
 export function User() {
-
   function editProfile() {
     document.getElementById("username").disabled = false;
     document.getElementById("email").disabled = false;
@@ -19,7 +18,6 @@ export function User() {
     document.getElementById("gender").disabled = true;
     document.getElementById("desc").readOnly = true;
     document.getElementById("saveButton").disabled = true;
-    document.getElementById("saveButton").setAttribute("disabled", "disabled")
   }
 
   return (
@@ -31,7 +29,7 @@ export function User() {
         Gender: <input type = "text" id = "gender" disabled = "true"/><br></br>
         Description: <textarea type = "text" id = "desc" rows = "5" cols = "33" readOnly = "true"/><br></br>
         <button onClick ={editProfile}> Edit profile </button>
-        <button onClick ={saveProfile} id = "saveButton" class="button" disabled="disabled"> Save </button>
+        <button onClick ={saveProfile} id = "saveButton" disabled> Save </button>
     </>
   );
 
