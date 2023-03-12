@@ -1,4 +1,4 @@
-import './App.css';
+import PageWrapper from '../components/PageWrapper';
 
 
 export function User() {
@@ -21,7 +21,7 @@ export function User() {
   }
 
   return (
-    <>
+    <PageWrapper>
         <h2>User Profile</h2>
         Name: <input type = "text" id = "username" disabled = "true" /><br></br>
         Email: <input type = "text" id = "email" disabled = "true"/><br></br>
@@ -30,7 +30,7 @@ export function User() {
         Description: <textarea type = "text" id = "desc" rows = "5" cols = "33" readOnly = "true"/><br></br>
         <button onClick ={editProfile}> Edit profile </button>
         <button onClick ={saveProfile} id = "saveButton" disabled> Save </button>
-    </>
+    </PageWrapper>
   );
 
 

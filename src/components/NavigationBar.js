@@ -25,6 +25,7 @@ const NavigationBar = () => {
 			<NavigationButton text="Matchmaker" destination='QuickApplier'/>
 			<NavigationButton text="Calendar" destination='InterviewCalender'/>
 			<NavigationButton text="Resumes" destination='ResumeManager'/>
+			<NavigationButton text="Profile" destination='User'/>
 		</div>
 	)
 }
