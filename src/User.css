@@ -1,0 +1,33 @@
+.container {
+    width: 85%;
+}
+
+.User {
+    height: 90vh;
+    width: 35vw;
+    background-color: whitesmoke;
+    margin-left: 50px;
+    margin-top: 0px;
+    padding-left: 75px;
+    padding-top: 10px;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 5px;
+}
+
+.boxes {
+    margin-left: 50%;
+    margin: 10px;
+}
+
+.accntItem {
+    margin: 5px;
+}
+
+#button {
+    float: right;
+}
