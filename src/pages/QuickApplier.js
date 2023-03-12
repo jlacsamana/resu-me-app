@@ -4,41 +4,37 @@ import x from '../res/x.png';
 import heart from '../res/heart.png';
 import { func } from 'prop-types';
 import React, { useState } from "react";
+import { default_employer, employerList } from '../res/testing';
 
 export function QuickApplier() {
-    const [count, updateView] = useState(0);
+    const [currentEmployerProfile, updateView] = useState(0);
+    const [count, updateCounter] = useState(0);
+
     //get an employer profile from the queue
     //replenish queue if numbers are sufficiently low
     //TODO: replace with API call, use dummy data for now
 
-    //for testing purposes
-    const bill = {
-        employer: "William Clinton",
-        location: "Washinton, DC",
-        postition: "Intern",
-        description: "You get to work for one of the most powerful people on earth ;) Provide support for President Clinton as we goes about his day in more ways than one.",
-        requirements: "Currently in university",
-        pfp: "https://cdn.britannica.com/41/172741-138-647B3D53/overview-Bill-Clinton.jpg"
+    //stub, not working yet, change to make database calls
+    function getNextEmployer() {
+        return employerList[count];
+
     }
-
-
-    var employerQueue = []
-    employerQueue.push(bill)
-
-
-
-    var currentEmployerProfile = {
-        employer: "William Clinton",
-        location: "Washinton, DC",
-        postition: "Intern",
-        description: "You get to work for one of the most powerful people on earth ;) Provide support for President Clinton as we goes about his day in more ways than one.",
-        requirements: "Currently in university",
-        pfp: "https://cdn.britannica.com/41/172741-138-647B3D53/overview-Bill-Clinton.jpg"
-    }
-
 
     function nextEmployerView() {
-        updateView(currentEmployerProfile = getNextEmployer());
+        updateView(function (currentEmployerProfile) {
+            if (currentEmployerProfile == 0) {
+                return (currentEmployerProfile = default_employer);
+            } else {
+                return (currentEmployerProfile = getNextEmployer());
+
+            }
+        });
+    }
+
+    function incrementCounter() {
+        updateCounter(function (count) {
+            return (count += 1);
+        });
     }
 
 
@@ -53,11 +49,15 @@ export function QuickApplier() {
                     <div class="absButtonView">
                         <button class="buttonRound"><img src={x} onClick={() => {
                             nextEmployerView();
-
+                            incrementCounter();
                         }}></img> </button>
                         <button class="buttonRound"><img src={heart} onClick={() => {
+                            // before going onto next employer, create popup view, prompting resume select, and submission
 
 
+                            // next employer after popup is dismissed
+                            nextEmployerView();
+                            incrementCounter();
                         }}></img></button>
                     </div>
                 </div>
@@ -82,19 +82,3 @@ export function QuickApplier() {
     );
 }
 
-
-//stub, not working yetrea
-function getNextEmployer() {
-    return {
-        employer: "Barry Obama",
-        location: "Washinton, DC",
-        postition: "Drone Pilot",
-        description: "My fellow Americans...",
-        requirements: "Experience in politing drones",
-        pfp: "https://cdn.theatlantic.com/media/mt/politics/obamasmokes.banner.jpg"
-    }
-
-
-
-
-}

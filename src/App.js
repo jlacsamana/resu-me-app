@@ -4,7 +4,7 @@ import { QuickApplier } from './pages/QuickApplier.js';
 import { HomePage } from './pages/HomePage.js';
 import { ResumeManager } from './pages/ResumeManager.js';
 import { InterviewCalendar } from './pages/InterviewCalender.js';
-import {User} from './user.js';
+import { User } from './user.js';
 
 const defaultPage = (HomePage);
 export const PageContext = React.createContext(defaultPage);
@@ -15,23 +15,23 @@ function App() {
   const reducer = (_, action) => {
     switch (action.type) {
       case "QuickApplier": {
-        setPage(QuickApplier);
+        setPage(<QuickApplier />);
         break;
       }
       case "InterviewCalender": {
-        setPage(InterviewCalendar);
+        setPage(<InterviewCalendar />);
         break;
       }
       case "ResumeManager": {
-        setPage(ResumeManager);
+        setPage(<ResumeManager />);
         break;
       }
       case "HomePage": {
-        setPage(HomePage);
+        setPage(<HomePage />);
         break;
       }
-      case "User" : {
-        setPage(User);
+      case "User": {
+        setPage(<User />);
         break;
       }
       default: {
