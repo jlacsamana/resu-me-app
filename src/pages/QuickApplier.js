@@ -1,5 +1,5 @@
 import PageWrapper from '../components/PageWrapper';
-import '../QuickApplier.css';
+import './QuickApplier.css';
 import x from '../res/x.png';
 import heart from '../res/heart.png';
 import { func } from 'prop-types';

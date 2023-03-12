@@ -1,0 +1,9 @@
+.fc-event-title {
+    padding: 0 1px;
+    white-space: normal;
+    padding-left: 10%;
+}
+
+.fc-event-main-frame {
+    flex-direction: column;
+}
