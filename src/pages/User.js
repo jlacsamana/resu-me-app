@@ -2,14 +2,6 @@ import PageWrapper from '../components/PageWrapper';
 import '../User.css';
 
 export function User() {
-  const UserOuterStyle = {
-    backgroundColor: '#E6F4F6',
-    textAlign: "center",
-    alignItems: "center",
-  }
-  const UserInnerStyle = {
-    justifyContent: "center"
-  }
   function editProfile() {
     if (document.getElementById("username").disabled) {
       document.getElementById("username").disabled = false;
